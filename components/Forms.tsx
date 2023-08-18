@@ -94,7 +94,7 @@ export default function Forms({
             onClick={handleButtonClick} 
             disabled={isLoading}
         >
-        Generate Updates
+        Get me a job
         </button>
       </div>
     );
