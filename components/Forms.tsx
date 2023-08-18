@@ -2,23 +2,28 @@
 import React, { useEffect, useRef } from 'react';
 
 type FormsProps = {
-    userInput: string; // Assuming it's a string
-    setUserInput: (input: string) => void;
-    handleButtonClick: () => void; // Or whatever type this function takes/returns
-    isButtonClicked: boolean;
-    isLoading: boolean;
-    promptOutput: string;
-    setPromptOutput: (output: string) => void;
+  resume: string;
+  setResume: (resume: string) => void;
+  jobDescription: string;
+  setJobDescription: (description: string) => void;
+  handleButtonClick: () => void;
+  isButtonClicked: boolean;
+  isLoading: boolean;
+  promptOutput: string;
+  setPromptOutput: (output: string) => void;
 };
 
+
 export default function Forms({
-    userInput,
-    setUserInput,
-    handleButtonClick,
-    isButtonClicked,
-    isLoading,
-    promptOutput,
-    setPromptOutput,
+  resume,
+  setResume,
+  jobDescription,
+  setJobDescription,
+  handleButtonClick,
+  isButtonClicked,
+  isLoading,
+  promptOutput,
+  setPromptOutput,
 }: FormsProps)  {
     const outputRef = useRef<HTMLTextAreaElement>(null);
     
@@ -35,11 +40,21 @@ export default function Forms({
 
     return (
       <div className="p-10 content-box">
+
+       
         <textarea 
           className="border p-2 w-full mb-4" 
-          placeholder="Enter your input here..." 
-          value={userInput} 
-          onChange={(e) => setUserInput(e.target.value)}
+          placeholder="Paste your resume here..." 
+          value={resume} 
+          onChange={(e) => setResume(e.target.value)}
+        />
+
+      
+        <textarea 
+          className="border p-2 w-full mb-4" 
+          placeholder="Enter the job description here..." 
+          value={jobDescription} 
+          onChange={(e) => setJobDescription(e.target.value)}
         />
 
         <div className="spinner-container">
